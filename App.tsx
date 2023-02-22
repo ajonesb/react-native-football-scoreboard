@@ -1,11 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, View, ImageBackground } from "react-native";
+import Scoreboard from "./src/components/Scoreboard";
+import backgroundImage from "./assets/worldcup.jpg";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ImageBackground
+        source={backgroundImage}
+        resizeMode="cover"
+        style={styles.image}
+      >
+        <View style={styles.overlay}></View>
+        <Scoreboard />
+      </ImageBackground>
     </View>
   );
 }
@@ -13,8 +21,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "black",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "relative",
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "black",
+    opacity: 0.7,
   },
 });
