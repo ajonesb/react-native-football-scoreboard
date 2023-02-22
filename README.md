@@ -1,6 +1,4 @@
-# react-native-football-scoreboard
-
-## Football World Cup Score Board
+## React Native Football World Cup Score Board
 
 This is a React Native application that is based on a live
 Football World Cup Score Board that shows matches and scores.
@@ -25,26 +23,35 @@ a. Mexico - Canada: 0 - 5
 b. Spain - Brazil: 10 – 2
 c. Germany - France: 2 – 2
 d. Uruguay - Italy: 6 – 6
-e. Argentina - Australia: 3 - 1
+e. Argentina - Peru: 3 - 1
 
 The summary would provide with the following information:
 
 1. Uruguay 6 - Italy 6
 2. Spain 10 - Brazil 2
 3. Mexico 0 - Canada 5
-4. Argentina 3 - Australia 1
+4. Argentina 3 - Peru 1
 5. Germany 2 - France 2
 
 ## Getting Started
 
 ## Install dependencies
 
-```
 npm install
 
-```
+# Install Expo globally
 
-First, run the development server with expo:
+npm install -g expo-cli
+
+# Android Studio and Xcode for Emulator
+
+Install Android Studio for Emulator:
+`https://developer.android.com/studio`
+
+Install Xcode for IOS simulator:
+`https://developer.apple.com/xcode/`
+
+Run the development server with expo:
 
 ```
 expo start --localhost
@@ -60,8 +67,6 @@ npm test
 # or
 yarn test
 ```
-
-## View Demo
 
 ## Start the App
 

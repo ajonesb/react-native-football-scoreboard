@@ -21,7 +21,7 @@ describe("Football Scoreboard", () => {
     { id: 0, teams: "Uruguay vs Italy", score: "0 - 0" },
     { id: 1, teams: "Spain vs Brazil", score: "0 - 0" },
     { id: 2, teams: "Mexico vs Canada", score: "0 - 0" },
-    { id: 3, teams: "Argentina vs Australia", score: "0 - 0" },
+    { id: 3, teams: "Argentina vs Peru", score: "0 - 0" },
     { id: 4, teams: "Germany vs France", score: "0 - 0" },
   ];
 
@@ -78,7 +78,7 @@ describe("Football Scoreboard", () => {
       { id: "0", score: "Uruguay vs Italy", matchScore: "6 - 6" },
       { id: "1", score: "Spain vs Brazil", matchScore: "10 - 2" },
       { id: "2", score: "Mexico vs Canada", matchScore: "0 - 5" },
-      { id: "3", score: "Argentina vs Australia", matchScore: "3 - 1" },
+      { id: "3", score: "Argentina vs Peru", matchScore: "3 - 1" },
       { id: "4", score: "Germany vs France", matchScore: "2 - 2" },
     ];
 
@@ -122,7 +122,7 @@ describe("Football Scoreboard", () => {
     expect(queryByText("Uruguay vs Italy: 0 - 0")).toBeNull();
     expect(queryByText("Spain vs Brazil: 0 - 0")).toBeNull();
     expect(queryByText("Mexico vs Canada: 0 - 0")).toBeNull();
-    expect(queryByText("Argentina vs Australia: 0 - 0")).toBeNull();
+    expect(queryByText("Argentina vs Peru: 0 - 0")).toBeNull();
     expect(queryByText("Germany vs France: 0 - 0")).toBeNull();
   });
 });

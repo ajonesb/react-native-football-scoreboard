@@ -19,7 +19,7 @@ const Scoreboard: React.FC = () => {
     { home: "Uruguay", away: "Italy", score: [0, 0] },
     { home: "Spain", away: "Brazil", score: [0, 0] },
     { home: "Mexico", away: "Canada", score: [0, 0] },
-    { home: "Argentina", away: "Australia", score: [0, 0] },
+    { home: "Argentina", away: "Peru", score: [0, 0] },
     { home: "Germany", away: "France", score: [0, 0] },
   ]);
 
@@ -86,7 +86,7 @@ const Scoreboard: React.FC = () => {
         updatedMatches[index].score = [0, 5];
         break;
       case 3:
-        updatedMatches[index].score = [3, 1];
+        updatedMatches[index].score = [1, 3];
         break;
       case 4:
         updatedMatches[index].score = [2, 2];
@@ -116,7 +116,7 @@ const Scoreboard: React.FC = () => {
       { home: "Uruguay", away: "Italy", score: [0, 0] },
       { home: "Spain", away: "Brazil", score: [0, 0] },
       { home: "Mexico", away: "Canada", score: [0, 0] },
-      { home: "Argentina", away: "Australia", score: [0, 0] },
+      { home: "Argentina", away: "Peru", score: [0, 0] },
       { home: "Germany", away: "France", score: [0, 0] },
     ]);
 
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontFamily: "System",
     marginTop: 20,
-    color: "#A143F8",
+    color: "#6AFF00",
     textTransform: "uppercase",
     alignSelf: "center",
     textAlign: "center",
@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   button_show_summary: {
-    backgroundColor: "#C800FF",
+    backgroundColor: "green",
     padding: 20,
     borderRadius: 8,
     textAlign: "center",
