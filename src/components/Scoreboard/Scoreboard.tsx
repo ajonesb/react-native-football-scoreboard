@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Pressable, ScrollView } from "react-native";
+import { View, Text, Pressable, ScrollView } from "react-native";
+import { ScoreboardStyles } from "./ScoreboardStyles";
 
 /* 
 Interface for the Match object which should have a home property that is a string, 
@@ -131,40 +132,47 @@ const Scoreboard: React.FC = () => {
 
   return (
     <ScrollView nestedScrollEnabled={true} style={{ width: "100%" }}>
-      <Text style={styles.title}>Football World Cup Score Board</Text>
-      <View style={styles.main}>
+      <Text style={ScoreboardStyles.title}>Football World Cup Score Board</Text>
+      <View style={ScoreboardStyles.main}>
         {matches.map((match, index) => (
-          <View key={index} style={styles.description_games_container}>
+          <View
+            key={index}
+            style={ScoreboardStyles.description_games_container}
+          >
             <Text
               data-testid={`match-team-score-${index}`}
-              style={styles.match}
+              style={ScoreboardStyles.match}
             >
               {match.home} vs {match.away}
             </Text>
             {showScores && (
               <>
-                <View style={styles.score_container}>
+                <View style={ScoreboardStyles.score_container}>
                   <Text
                     data-testid={`match-number-score-${index}`}
-                    style={styles.score}
+                    style={ScoreboardStyles.score}
                   >
                     {match.score[0]} - {match.score[1]}
                   </Text>
                 </View>
-                <View style={styles.button_container}>
+                <View style={ScoreboardStyles.button_container}>
                   <Pressable
                     data-testid={`update-score-button-${index}`}
-                    style={styles.button_change_score}
+                    style={ScoreboardStyles.button_change_score}
                     onPress={() => handleUpdateScore(index)}
                   >
-                    <Text style={styles.button_text}>Update Score</Text>
+                    <Text style={ScoreboardStyles.button_text}>
+                      Update Score
+                    </Text>
                   </Pressable>
                   <Pressable
                     data-testid={`finish-game-button-${index}`}
-                    style={styles.button_finish_game}
+                    style={ScoreboardStyles.button_finish_game}
                     onPress={() => handleFinishGame(index)}
                   >
-                    <Text style={styles.button_text}>Finish Game</Text>
+                    <Text style={ScoreboardStyles.button_text}>
+                      Finish Game
+                    </Text>
                   </Pressable>
                 </View>
               </>
@@ -172,13 +180,13 @@ const Scoreboard: React.FC = () => {
           </View>
         ))}
         {!showScores && (
-          <View style={styles.button_container}>
+          <View style={ScoreboardStyles.button_container}>
             <Pressable
               data-testid="start-game-button"
-              style={styles.button_start_game}
+              style={ScoreboardStyles.button_start_game}
               onPress={handleStartGame}
             >
-              <Text style={styles.button_text}>Start Games</Text>
+              <Text style={ScoreboardStyles.button_text}>Start Games</Text>
             </Pressable>
           </View>
         )}
@@ -186,28 +194,34 @@ const Scoreboard: React.FC = () => {
 
       {showScores && (
         <View>
-          <View style={styles.button_container}>
+          <View style={ScoreboardStyles.button_container}>
             <Pressable
               data-testid="show-summary-button"
-              style={styles.button_show_summary}
+              style={ScoreboardStyles.button_show_summary}
               onPress={handleShowSummary}
             >
-              <Text style={styles.button_text}>Show Summary</Text>
+              <Text style={ScoreboardStyles.button_text}>Show Summary</Text>
             </Pressable>
           </View>
           {showSummary && (
             <View>
-              <Text style={styles.title}>Summary of all scores:</Text>
+              <Text style={ScoreboardStyles.title}>Summary of all scores:</Text>
 
               {matches.map((match, index) => (
-                <View key={index} style={styles.description_games_container}>
-                  <Text data-testid={`score-${index}`} style={styles.match}>
+                <View
+                  key={index}
+                  style={ScoreboardStyles.description_games_container}
+                >
+                  <Text
+                    data-testid={`score-${index}`}
+                    style={ScoreboardStyles.match}
+                  >
                     {match.home} vs {match.away}
                   </Text>
-                  <View style={styles.score_container}>
+                  <View style={ScoreboardStyles.score_container}>
                     <Text
                       data-testid={`match-score-${index}`}
-                      style={styles.score}
+                      style={ScoreboardStyles.score}
                     >
                       {match.score[0]} - {match.score[1]}
                     </Text>
@@ -217,13 +231,15 @@ const Scoreboard: React.FC = () => {
             </View>
           )}
           {showSummary && (
-            <View style={styles.button_container}>
+            <View style={ScoreboardStyles.button_container}>
               <Pressable
                 data-testid="clear-scoreboard-button"
-                style={styles.button_clear_scoreboard}
+                style={ScoreboardStyles.button_clear_scoreboard}
                 onPress={handleClearScoreboard}
               >
-                <Text style={styles.button_text}>Clear Scoreboard</Text>
+                <Text style={ScoreboardStyles.button_text}>
+                  Clear Scoreboard
+                </Text>
               </Pressable>
             </View>
           )}
@@ -233,124 +249,4 @@ const Scoreboard: React.FC = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    padding: 10,
-    maxWidth: 1200,
-    color: "white",
-  },
-  match: {
-    color: "white",
-    fontSize: 20,
-    fontFamily: "System",
-  },
-  title: {
-    fontSize: 25,
-    fontFamily: "System",
-    marginTop: 20,
-    color: "#6AFF00",
-    textTransform: "uppercase",
-    alignSelf: "center",
-    textAlign: "center",
-    fontWeight: "bold",
-  },
-  score_container: {
-    display: "flex",
-  },
-  score: {
-    marginTop: 20,
-    color: "#6AFF00",
-    fontSize: 30,
-    fontFamily: "System",
-  },
-  description_games_container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    fontSize: 40,
-    width: "100%",
-    // zIndex: 2,
-    fontFamily: "System",
-    position: "relative",
-    padding: 10,
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // black with 50% opacity
-    color: "#fff",
-    borderWidth: 1,
-    borderColor: "#282828",
-    borderRadius: 8,
-    margin: 15,
-    alignSelf: "center",
-  },
-  section_title: {
-    fontSize: 20,
-    fontFamily: "System",
-    marginTop: 20,
-    color: "#A143F8",
-  },
-  button_container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    marginHorizontal: 20,
-  },
-
-  button_text: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-    justifyContent: "center",
-    alignItems: "center",
-    letterSpacing: 0.25,
-    fontFamily: "System",
-  },
-
-  button_start_game: {
-    backgroundColor: "#05A7FF",
-    padding: 20,
-    borderRadius: 8,
-    textAlign: "center",
-    marginTop: 20,
-    margin: "auto",
-  },
-
-  button_finish_game: {
-    backgroundColor: "deeppink",
-    padding: 20,
-    borderRadius: 8,
-    textAlign: "center",
-    marginTop: 20,
-  },
-  button_change_score: {
-    backgroundColor: "#585858",
-    padding: 20,
-    borderRadius: 8,
-    textAlign: "center",
-    marginTop: 20,
-  },
-  button_show_summary: {
-    backgroundColor: "green",
-    padding: 20,
-    borderRadius: 8,
-    textAlign: "center",
-    marginTop: 20,
-  },
-  button_clear_scoreboard: {
-    backgroundColor: "#0073FF",
-    padding: 20,
-    borderRadius: 8,
-    textAlign: "center",
-    marginTop: 20,
-    maxWidth: 300,
-  },
-});
 export default Scoreboard;

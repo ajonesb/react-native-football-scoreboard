@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, ImageBackground, ScrollView } from "react-native";
-import Scoreboard from "./src/components/Scoreboard";
+import Scoreboard from "./src/components/Scoreboard/Scoreboard";
 import backgroundImage from "./assets/worldcup.jpg";
 
 export default function App() {
