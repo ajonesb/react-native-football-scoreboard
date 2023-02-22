@@ -245,17 +245,18 @@ const styles = StyleSheet.create({
   },
   match: {
     color: "white",
-    fontSize: 25,
+    fontSize: 20,
     fontFamily: "System",
   },
   title: {
-    fontSize: 30,
+    fontSize: 25,
     fontFamily: "System",
     marginTop: 20,
     color: "#A143F8",
     textTransform: "uppercase",
     alignSelf: "center",
     textAlign: "center",
+    fontWeight: "bold",
   },
   score_container: {
     display: "flex",
@@ -276,13 +277,13 @@ const styles = StyleSheet.create({
     // zIndex: 2,
     fontFamily: "System",
     position: "relative",
-    padding: 16,
+    padding: 10,
     backgroundColor: "rgba(0, 0, 0, 0.5)", // black with 50% opacity
     color: "#fff",
     borderWidth: 1,
     borderColor: "#282828",
     borderRadius: 8,
-    margin: 20,
+    margin: 15,
     alignSelf: "center",
   },
   section_title: {
