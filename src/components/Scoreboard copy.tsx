@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Pressable, ScrollView } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
 
 /* 
 Interface for the Match object which should have a home property that is a string, 
@@ -130,7 +130,7 @@ const Scoreboard: React.FC = () => {
   };
 
   return (
-    <ScrollView nestedScrollEnabled={true} style={{ width: "100%" }}>
+    <View>
       <Text style={styles.title}>Football World Cup Score Board</Text>
       <View style={styles.main}>
         {matches.map((match, index) => (
@@ -229,7 +229,7 @@ const Scoreboard: React.FC = () => {
           )}
         </View>
       )}
-    </ScrollView>
+    </View>
   );
 };
 
@@ -246,11 +246,11 @@ const styles = StyleSheet.create({
   match: {
     color: "white",
     fontSize: 25,
-    fontFamily: "System",
+    fontFamily: "arial, san-serif",
   },
   title: {
     fontSize: 30,
-    fontFamily: "System",
+    fontFamily: "arial, san-serif",
     marginTop: 20,
     color: "#A143F8",
     textTransform: "uppercase",
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     color: "#6AFF00",
     fontSize: 30,
-    fontFamily: "System",
+    fontFamily: "arial, san-serif",
   },
   description_games_container: {
     display: "flex",
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     width: "100%",
     // zIndex: 2,
-    fontFamily: "System",
+    fontFamily: "arial, san-serif",
     position: "relative",
     padding: 16,
     backgroundColor: "rgba(0, 0, 0, 0.5)", // black with 50% opacity
@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
   },
   section_title: {
     fontSize: 20,
-    fontFamily: "System",
+    fontFamily: "arial, san-serif",
     marginTop: 20,
     color: "#A143F8",
   },
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     letterSpacing: 0.25,
-    fontFamily: "System",
+    fontFamily: "arial, san-serif",
   },
 
   button_start_game: {

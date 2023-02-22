@@ -1,20 +1,24 @@
 import React from "react";
-import { StyleSheet, View, ImageBackground } from "react-native";
+import { StyleSheet, View, ImageBackground, ScrollView } from "react-native";
 import Scoreboard from "./src/components/Scoreboard";
 import backgroundImage from "./assets/worldcup.jpg";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={backgroundImage}
-        resizeMode="cover"
-        style={styles.image}
-      >
-        <View style={styles.overlay}></View>
-        <Scoreboard />
-      </ImageBackground>
-    </View>
+    
+      <View style={styles.container}>
+        <ScrollView style={{ width: "100%" }}>
+          <ImageBackground
+            source={backgroundImage}
+            resizeMode="cover"
+            style={styles.image}
+          >
+            <View style={styles.overlay}></View>
+            <Scoreboard />
+          </ImageBackground>
+        </ScrollView>
+      </View>
+    
   );
 }
 
