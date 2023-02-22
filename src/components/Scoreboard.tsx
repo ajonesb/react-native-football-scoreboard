@@ -254,6 +254,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
     color: "#A143F8",
     textTransform: "uppercase",
+    alignSelf: "center",
+    textAlign: "center"
+
   },
   score_container: {
     display: "flex",
@@ -270,7 +273,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     textAlign: "center",
     fontSize: 40,
-    maxWidth: "100%",
+    maxWidth: "350px",
     width: "100%",
     zIndex: 2,
     fontFamily: "monospace, san-serif",
@@ -282,6 +285,8 @@ const styles = StyleSheet.create({
     borderColor: "#282828",
     borderRadius: 8,
     margin: 20,
+    alignSelf: "center",
+
   },
   section_title: {
     fontSize: 20,
