@@ -71,3 +71,6 @@ yarn test
 ## Start the App
 
 expo start --localhost
+
+
+![scoreboard](https://user-images.githubusercontent.com/17410649/225726435-438a8b19-cf7e-4660-9b59-01f8fc799241.png)
